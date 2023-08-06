@@ -1,0 +1,35 @@
+
+Claro, aquí tienes algunos ejemplos de cómo utilizar la CLI de AWS para contenedores e imágenes de Docker:
+
+Para enumerar todos los registros de contenedores que tienes en AWS, puedes utilizar el siguiente comando:
+aws ecr list-registries
+
+Para describir un registro de contenedores específico, puedes utilizar el siguiente comando:
+aws ecr describe-repository --repository-name <repository-name>
+
+Para obtener una contraseña que puedes utilizar para autenticarte con un registro de contenedores, puedes utilizar el siguiente comando:
+aws ecr get-login-password --region <region> --repository-name <repository-name>
+
+Para autenticar una instancia de Docker con un registro de contenedores, puedes utilizar el siguiente comando:
+docker login --username AWS --password-stdin <registry-url>
+
+Para descargar una imagen de Docker de un registro de contenedores, puedes utilizar el siguiente comando:
+docker pull <registry-url>/<image-name>:<tag>
+
+Para ejecutar una imagen de Docker en un contenedor, puedes utilizar el siguiente comando:
+docker run -p 80:80 <image-name>
+
+Para detener un contenedor, puedes utilizar el siguiente comando:
+docker stop <container-id>
+
+Para eliminar un contenedor, puedes utilizar el siguiente comando:
+docker rm <container-id>
+
+Para enumerar todas las imágenes de Docker que tienes en tu instancia de Docker, puedes utilizar el siguiente comando:
+docker images
+
+Para asignar una etiqueta a una imagen de Docker, puedes utilizar el siguiente comando:
+docker tag <image-name>:<tag> <new-image-name>
+
+Para empujar una imagen de Docker a un registro de contenedores, puedes utilizar el siguiente comando:
+docker push <image-name>:<tag>

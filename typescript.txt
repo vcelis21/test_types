@@ -1,0 +1,31 @@
+npm i typescript -g
+npm i ts-node -g
+npm i nodemon -g
+tsc --init
+npm init -y
+npm i express cors dotenv multer mongoose 
+//Paquetes de tipado
+npm i @types/express @types/cors @types/dotenv @types/multer @types/mongoose -D
+
+//.json
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p ."
+  },
+
+//app.ts
+import "dotenv/config";
+import express from "express";
+import cors from "cors";
+const PORT = process.env.PORT || 3000;
+const app = express();
+app.use(cors());
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
+}
+);
+
+
+
